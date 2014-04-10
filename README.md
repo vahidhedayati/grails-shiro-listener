@@ -11,7 +11,7 @@ shiro-quick-start --prefix=myexample
 
 
 ##### scripts/_Events.groovy:
-```
+```groovy
 import groovy.xml.StreamingMarkupBuilder
 
 eventWebXmlEnd = {String tmpfile ->
@@ -40,7 +40,7 @@ MyShiroListener.groovy
 
 ##### Take a look under conf/spring/resources.groovy: you need a bean for your new Listener
 
-
+```
 import mydemo.MyShiroListener
 
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator
@@ -56,13 +56,13 @@ beans = {
 		}
 	
 }
-
+```
 
 
 
 
 ##### Controllers mydemo.TestShiroController:
-```
+```groovy
 class TestShiroController extends MyHttpSessionListener {
     def index() {
 		//This is a list of users that gets loaded by index - it does not automatically update according to new logins:	
@@ -73,6 +73,34 @@ class TestShiroController extends MyHttpSessionListener {
 	}
 }
 ```
+
+##### Bootstrap.groovy
+
+```groovy
+import org.apache.shiro.crypto.hash.Sha256Hash
+
+class BootStrap {
+
+    def init = { servletContext ->
+		
+		def user1 = new myexampleUser(username: "user1", passwordHash: new Sha256Hash("password").toHex())
+		user1.addToPermissions("*:*")
+		user1.save()
+		
+		def user2 = new myexampleUser(username: "user2", passwordHash: new Sha256Hash("password").toHex())
+		user2.addToPermissions("*:*")
+		user2.save()
+		
+		def user3 = new myexampleUser(username: "user3", passwordHash: new Sha256Hash("password").toHex())
+		user3.addToPermissions("*:*")
+		user3.save()
+		
+    }
+    def destroy = {
+    }
+}
+```
+
 
 
 ##### A big thank you to Ralph Perlewitz and his guide : http://rewoo.wordpress.com/2012/10/17/maintain-a-user-list-with-grails/ which made all of this possible.
