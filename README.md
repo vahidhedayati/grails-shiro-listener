@@ -102,15 +102,11 @@ class BootStrap {
 ```
 
 
+### References:
 
-##### A big thank you to Ralph Perlewitz and his guide : http://rewoo.wordpress.com/2012/10/17/maintain-a-user-list-with-grails/ which made all of this possible.
+http://rewoo.wordpress.com/2012/10/17/maintain-a-user-list-with-grails/ which made all of this possible.
 
-
-
-##### A big thank you to Oliver Wahlen  http://owahlen.blogspot.co.uk/2010/12/tracking-session-lifecycle-in-grails.html for helping understand the more modular approach to web.xml and his guide which was working but from a http session point of view 
-
-
-Other Links and urls used to research what I need but in the end all of it was in the above article :
+http://owahlen.blogspot.co.uk/2010/12/tracking-session-lifecycle-in-grails.html
 
 http://java.dzone.com/articles/exploring-apache-shiro
 
@@ -122,27 +118,13 @@ http://shiro-user.582556.n2.nabble.com/Problem-with-sessionDAO-and-WebFilter-td6
 
 http://www.velocityreviews.com/forums/t605471-obtaining-a-list-of-all-active-sessions-within-a-servlet-container.html
 
-
-
-
-
-
-http://rewoo.wordpress.com/2012/10/17/maintain-a-user-list-with-grails/
-
 http://grails.1312388.n4.nabble.com/Shiro-How-to-intercept-logout-td3711739.html
 
 http://grails.1312388.n4.nabble.com/Shiro-plugin-questions-td4628472.html
-
 
 http://coderberry.me/blog/2012/04/26/grails-authentication-with-shiro/
 
 https://github.com/cavneb/grails-shiro-example
 
-
 https://github.com/andymccullough/litecollab/tree/master/uk.co.litecollab
-
-
-
-
-
 
